@@ -26,6 +26,59 @@
 
 
 
+// const players = [
+//     "Vinicius Junior",
+//     "Jude Bellingham",
+//     "Kylian Mbappe",
+//     "Federico Valverde",
+//     "Rodrygo",
+//     "Luka Modric",
+//     "Eduardo Camavinga",
+//     "Aurelien Tchouameni",
+//     "Dani Carvajal",
+//     "Thibaut Courtois",
+//     "Antonio Rudiger",
+//     "Arda Guler",
+//     "Brahim Diaz",
+//     "Endrick"
+// ];
+
+
+
+// const searchRef = document.querySelector("#search")
+// const listRef = document.querySelector(".list")
+
+
+// function renderPlayers (playersToRender) {
+//     const murkup = playersToRender.map((player) => {
+//         return `<li>${player}</li>`
+//     }).join("")    
+//     listRef.innerHTML = murkup
+// }
+
+// renderPlayers(players)
+
+// searchRef.addEventListener("input", (event) => {
+//     const value = event.target.value.toLowerCase()
+    
+//     const fillteredPlayers = players.filter((player) => {
+//         const tolowerPlayer = player.toLowerCase()
+//         return tolowerPlayer.includes(value)
+//     })
+
+//     renderPlayers(fillteredPlayers)    
+// })
+
+
+
+
+
+
+
+/////////// 2 спроба сам //////////////////////////////////////
+
+
+
 const players = [
     "Vinicius Junior",
     "Jude Bellingham",
@@ -45,29 +98,54 @@ const players = [
 
 
 
-const searchRef = document.querySelector("#search")
-const listRef = document.querySelector(".list")
+const inputRef = document.querySelector("#search");
+const listRef = document.querySelector(".list");
 
-
-function renderPlayers (playersToRender) {
-    const murkup = playersToRender.map((player) => {
-        return `<li>${player}</li>`
-    }).join("")    
-    listRef.innerHTML = murkup
+function renderPlayers (playerToRender) {
+    const murkup = playerToRender.map((player) => {
+       return `<li>${player}</li>`
+    }).join("")
+    listRef.innerHTML = murkup;
 }
-
 renderPlayers(players)
 
-searchRef.addEventListener("input", (event) => {
-    const value = event.target.value.toLowerCase()
+inputRef.addEventListener("input", (event) => {
+    const value = event.target.value.toLowerCase();
     
-    const fillteredPlayers = players.filter((player) => {
-        const tolowerPlayer = player.toLowerCase()
-        return tolowerPlayer.includes(value)
-    })
 
-    renderPlayers(fillteredPlayers)    
+    const fillteredPlayers = players.filter((player) => {
+        const tolowerPlayer = player.toLowerCase();
+        return tolowerPlayer.includes(value)
+    })    
+    renderPlayers(fillteredPlayers)
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
