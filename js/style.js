@@ -79,64 +79,95 @@
 
 
 
-const players = [
-    "Vinicius Junior",
-    "Jude Bellingham",
-    "Kylian Mbappe",
-    "Federico Valverde",
-    "Rodrygo",
-    "Luka Modric",
-    "Eduardo Camavinga",
-    "Aurelien Tchouameni",
-    "Dani Carvajal",
-    "Thibaut Courtois",
-    "Antonio Rudiger",
-    "Arda Guler",
-    "Brahim Diaz",
-    "Endrick"
-];
+// const players = [
+//     "Vinicius Junior",
+//     "Jude Bellingham",
+//     "Kylian Mbappe",
+//     "Federico Valverde",
+//     "Rodrygo",
+//     "Luka Modric",
+//     "Eduardo Camavinga",
+//     "Aurelien Tchouameni",
+//     "Dani Carvajal",
+//     "Thibaut Courtois",
+//     "Antonio Rudiger",
+//     "Arda Guler",
+//     "Brahim Diaz",
+//     "Endrick"
+// ];
 
+
+
+// const inputRef = document.querySelector("#search");
+// const listRef = document.querySelector(".list");
+
+// function renderPlayers (playerToRender) {
+//     const murkup = playerToRender.map((player) => {
+//        return `<li>${player}</li>`
+//     }).join("")
+//     listRef.innerHTML = murkup;
+// }
+// renderPlayers(players)
+
+// inputRef.addEventListener("input", (event) => {
+//     const value = event.target.value.toLowerCase();
+    
+
+//     const fillteredPlayers = players.filter((player) => {
+//         const tolowerPlayer = player.toLowerCase();
+//         return tolowerPlayer.includes(value)
+//     })    
+//     renderPlayers(fillteredPlayers)
+// })
+
+
+
+
+
+
+
+
+
+
+
+
+///////////////////// 3 спроба з назвами клубів /////////////////
+
+
+
+const clubs = [
+    { name: "Real Madrid", country: "Spain" },
+    { name: "Manchester City", country: "England" },
+    { name: "Bayern Munich", country: "Germany" },
+    { name: "AC Milan", country: "Italy" },
+    { name: "Karpaty Lviv", country: "Ukraine" },
+    { name: "Girona", country: "Spain" },
+    { name: "Liverpool", country: "England" }
+];
 
 
 const inputRef = document.querySelector("#search");
 const listRef = document.querySelector(".list");
 
-function renderPlayers (playerToRender) {
-    const murkup = playerToRender.map((player) => {
-       return `<li>${player}</li>`
+function renderClubs (clubsToRender){
+    const murkup = clubsToRender.map((club) => {
+        return `<li>${club.name}<span>${club.country}</span></li>`
     }).join("")
     listRef.innerHTML = murkup;
 }
-renderPlayers(players)
+
+renderClubs(clubs)
 
 inputRef.addEventListener("input", (event) => {
-    const value = event.target.value.toLowerCase();
+    const value = event.target.value.toLowerCase()
+
     
-
-    const fillteredPlayers = players.filter((player) => {
-        const tolowerPlayer = player.toLowerCase();
-        return tolowerPlayer.includes(value)
-    })    
-    renderPlayers(fillteredPlayers)
+    const fillterClubs = clubs.filter((club) => {
+        const tolowerClubs = club.name.toLowerCase()
+        return tolowerClubs.includes(value)
+    })
+    renderClubs(fillterClubs)    
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
