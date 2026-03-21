@@ -1,21 +1,86 @@
-const nameRef = document.querySelector(".name")
-const surnameRef = document.querySelector(".surname")
-const saveBtn = document.querySelector(".save")
+// const nameRef = document.querySelector(".name")
+// const surnameRef = document.querySelector(".surname")
+// const saveBtn = document.querySelector(".save")
 
 
 
-let contacts = JSON.parse(localStorage.getItem("contacts")) || [];
+// let contacts = JSON.parse(localStorage.getItem("contacts")) || [];
 
-saveBtn.addEventListener("click", () => {
-    const newContact = {
-        name: nameRef.value,
-        surname: surnameRef.value,
-    }
-    contacts.push(newContact)
+// saveBtn.addEventListener("click", () => {
+//     const newContact = {
+//         name: nameRef.value,
+//         surname: surnameRef.value,
+//     }
+//     contacts.push(newContact)
 
 
-    localStorage.setItem("contacts", JSON.stringify(contacts))
+//     localStorage.setItem("contacts", JSON.stringify(contacts))
 
-    nameRef.value = "";
-    surnameRef.value = "";
+//     nameRef.value = "";
+//     surnameRef.value = "";
+// })
+
+
+////////////////////////////////////////////////////////////////////////
+
+
+
+
+const players = [
+    "Vinicius Junior",
+    "Jude Bellingham",
+    "Kylian Mbappe",
+    "Federico Valverde",
+    "Rodrygo",
+    "Luka Modric",
+    "Eduardo Camavinga",
+    "Aurelien Tchouameni",
+    "Dani Carvajal",
+    "Thibaut Courtois",
+    "Antonio Rudiger",
+    "Arda Guler",
+    "Brahim Diaz",
+    "Endrick"
+];
+
+
+
+const searchRef = document.querySelector("#search")
+const listRef = document.querySelector(".list")
+
+
+function renderPlayers (playersToRender) {
+    const murkup = playersToRender.map((player) => {
+        return `<li>${player}</li>`
+    }).join("")    
+    listRef.innerHTML = murkup
+}
+
+renderPlayers(players)
+
+searchRef.addEventListener("input", (event) => {
+    const value = event.target.value.toLowerCase()
+    
+    const fillteredPlayers = players.filter((player) => {
+        const tolowerPlayer = player.toLowerCase()
+        return tolowerPlayer.includes(value)
+    })
+
+    renderPlayers(fillteredPlayers)    
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
