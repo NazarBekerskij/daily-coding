@@ -57,57 +57,57 @@
 
 
 
-const year = document.querySelector(".yer");
-const day = document.querySelector(".day");
-const date = document.querySelector(".date");
-const month = document.querySelector(".month");
-const hours = document.querySelector(".hours");
-const minute = document.querySelector(".minute");
-const second = document.querySelector(".second");
+// const year = document.querySelector(".yer");
+// const day = document.querySelector(".day");
+// const date = document.querySelector(".date");
+// const month = document.querySelector(".month");
+// const hours = document.querySelector(".hours");
+// const minute = document.querySelector(".minute");
+// const second = document.querySelector(".second");
 
 
-const happyDays = new Date(2027, 0, 1, 0,0,0)
-console.log(happyDays);
+// const happyDays = new Date(2027, 0, 1, 0,0,0)
+// console.log(happyDays);
 
 
-setInterval(() => {
-const days = ["неділя", "понеділок", "вівторок", "середа", "четвер", "пятниця", "субота",];
-const months = ["січень", "лютий", "березень", "квітень", "травень", "червень", "липень", "серпень", "вересень", "жовтень", "листопад", "грудень",];
+// setInterval(() => {
+// const days = ["неділя", "понеділок", "вівторок", "середа", "четвер", "пятниця", "субота",];
+// const months = ["січень", "лютий", "березень", "квітень", "травень", "червень", "липень", "серпень", "вересень", "жовтень", "листопад", "грудень",];
 
 
-const currentDate = new Date() // поточна дата
-const time = (happyDays - currentDate);
+// const currentDate = new Date() // поточна дата
+// const time = (happyDays - currentDate);
 
 
-const day1 = Math.floor(time / (1000 * 60 * 60 * 24));
+// const day1 = Math.floor(time / (1000 * 60 * 60 * 24));
 
-const hours1 = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+// const hours1 = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 
-const mins = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
+// const mins = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
 
-const secs = Math.floor((time % (1000 * 60)) / 1000);
-
-
-
-// console.log(currentDate);
-// console.log("отримати рік",currentDate.getFullYear());
-// console.log("отримати день", days[currentDate.getDay()]);  // get day повертає 6 поточний день тижжня
-// console.log("отримати сьогоднішню дату", currentDate.getDate());
-// console.log("отримати місяць", months[currentDate.getMonth()]);
-// console.log("отримати час", currentDate.getHours());
-// console.log("отримати хвилини", currentDate.getMinutes());
-// console.log("отримати секунди", currentDate.getSeconds()); 
+// const secs = Math.floor((time % (1000 * 60)) / 1000);
 
 
-// year.textContent = currentDate.getFullYear();
-day.textContent = day1;
-// date.textContent = currentDate.getDate();
-// month.textContent = months[currentDate.getMonth()];
-hours.textContent = hours1;
-minute.textContent = mins;
-second.textContent = secs;
 
-}, 1000);
+// // console.log(currentDate);
+// // console.log("отримати рік",currentDate.getFullYear());
+// // console.log("отримати день", days[currentDate.getDay()]);  // get day повертає 6 поточний день тижжня
+// // console.log("отримати сьогоднішню дату", currentDate.getDate());
+// // console.log("отримати місяць", months[currentDate.getMonth()]);
+// // console.log("отримати час", currentDate.getHours());
+// // console.log("отримати хвилини", currentDate.getMinutes());
+// // console.log("отримати секунди", currentDate.getSeconds()); 
+
+
+// // year.textContent = currentDate.getFullYear();
+// // day.textContent = day1;
+// // date.textContent = currentDate.getDate();
+// // month.textContent = months[currentDate.getMonth()];
+// // hours.textContent = hours1;
+// // minute.textContent = mins;
+// // second.textContent = secs;
+
+// }, 1000);
 
 
 
@@ -128,6 +128,77 @@ second.textContent = secs;
 
 // Секунди: беремо залишок від хвилин і ділимо на 1000 мілісекунд
 // const secs = Math.floor((time % (1000 * 60)) / 1000);
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// const data = new Date()
+// console.log(data);
+
+
+
+
+
+
+const year = document.querySelector(".yer");
+const day = document.querySelector(".day");
+const date = document.querySelector(".date");
+const month = document.querySelector(".month");
+const hours = document.querySelector(".hours");
+const minute = document.querySelector(".minute");
+const second = document.querySelector(".second");
+
+const days = ["неділя", "понеділок", "вівторок", "середа", "четвер", "пятниця", "субота",];
+const months = ["січень", "лютий", "березень", "квітень", "травень", "червень", "липень", "серпень", "вересень", "жовтень", "листопад", "грудень",];
+
+
+const happyDays = new Date(2026, 2,24,10,29,30)
+
+const id = setInterval(() => {
+const currentDate = new Date();
+const time = happyDays - currentDate;
+
+
+if(time < 0){
+   clearInterval(id)
+   return;
+}
+
+
+const daysLeft = Math.floor(time / (1000 * 60 * 60 * 24));
+const hours1 = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+const mins = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
+const secs = Math.floor((time % (1000 * 60)) / 1000);
+
+
+// console.log("отримати рік",currentDate.getFullYear());
+// console.log("отримати день", days[currentDate.getDay()]);  // get day повертає 6 поточний день тижжня
+// console.log("отримати сьогоднішню дату", currentDate.getDate());
+// console.log("отримати місяць", months[currentDate.getMonth()]);
+// console.log("отримати час", currentDate.getHours());
+// console.log("отримати хвилини", currentDate.getMinutes());
+// console.log("отримати секунди", currentDate.getSeconds()); 
+
+
+
+
+day.textContent = daysLeft;
+hours.textContent = hours1;
+minute.textContent = mins;
+second.textContent = secs;
+}, 1000);
+
+
+
+
+
+
+
 
 
 
