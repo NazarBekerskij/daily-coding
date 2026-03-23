@@ -197,7 +197,31 @@ if(daysLeft >= 30){
 console.log(arendHome("2026-05-01"));
 
 
+////////////////////////////////////////////
+
+
+// Уяви, що ти приходиш у свій зал, прикладаєш картку, і система має перевірити, чи не закінчився твій абонемент сьогодні.
+
+
+function gumAbonoment(abonoment){
+const today = new Date();
+const lastDayAbonoment = new Date(abonoment)
+
+const diff = lastDayAbonoment - today
+
+const daysLeft = Math.ceil(diff / (1000 * 60 * 60 * 24));
 
 
 
+if(daysLeft >= 0){
+  return `Абонемент доступний! Залишилося ${daysLeft} днів.`;
+}else{
+  return `Абонемент не доступний. Термін закінчився ${Math.abs(daysLeft)} днів тому.`;
+}
+}
 
+console.log(gumAbonoment("2026-12-31")); 
+console.log(gumAbonoment("2024-01-01")); 
+
+
+/////////////////////////////////////
