@@ -171,3 +171,33 @@ if(today >= unlockDate){
 }
 
 console.log(canIWithdrawMoney("2026-2-01"));
+
+
+////////////////////////////////////////////
+
+
+// Уяви, що ти розробляєш сайт для оренди квартир у місті, куди ти збираєшся переїхати. Власник квартири дає знижку, якщо людина бронює житло мінімум за 30 днів до заїзду.
+
+function arendHome(checkInDateString){
+const today = new Date()
+const action = new Date(checkInDateString)
+
+const diffInMs = action - today;
+
+const daysLeft = Math.ceil(diffInMs / (1000 * 60 * 60 * 24));
+
+if(daysLeft >= 30){
+  return `до заїзду ${daysLeft} днів залишилося ви отримали знижку`
+}else{
+  return `до заїзду ${daysLeft} днів залишилося ви не отримали знижку`
+}
+}
+
+
+console.log(arendHome("2026-05-01"));
+
+
+
+
+
+
