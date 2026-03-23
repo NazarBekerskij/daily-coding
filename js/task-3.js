@@ -103,4 +103,24 @@ console.log(daysUntilNextBirthday(9, 30));
 
 
 
+////////////////////////////////////////////////////////
 
+
+
+
+function weeksUniteMove(targetDate){
+  const today = new Date();
+  const target = new Date(targetDate);
+
+  const time = target - today
+
+
+  const msInWeek = 1000 * 60 * 60 * 24 * 7
+  
+  const weeks = Math.floor(time / msInWeek)   
+
+
+  return weeks
+}
+
+console.log("до переїзду залишилося:", weeksUniteMove("2027-09-01"));
