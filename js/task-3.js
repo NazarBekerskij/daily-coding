@@ -124,3 +124,19 @@ function weeksUniteMove(targetDate){
 }
 
 console.log("до переїзду залишилося:", weeksUniteMove("2027-09-01"));
+
+
+//////////////////////////////////////////////////
+
+
+// Напиши функцію, яка приймає кількість годин на день і каже, скільки це буде хвилин за тиждень (7 днів).
+
+function weekCodujngMinutes (hoursDay) {
+const hoursPerWeek = hoursDay * 7;
+
+const minutesWeek = hoursPerWeek * 60
+
+return minutesWeek
+}
+console.log(weekCodujngMinutes(2));
+
