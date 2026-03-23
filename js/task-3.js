@@ -140,3 +140,18 @@ return minutesWeek
 }
 console.log(weekCodujngMinutes(2));
 
+
+/////////////////////////////////////////////
+
+
+function terminalYear (peapleYear, abonoment){
+  if(peapleYear >= 18 && abonoment === true){
+    return "проходь далі";
+  }else{
+    return "тобі сюда не можна";
+  }
+}
+
+console.log(terminalYear(23, true));
+
+
