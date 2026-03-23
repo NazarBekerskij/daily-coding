@@ -225,3 +225,27 @@ console.log(gumAbonoment("2024-01-01"));
 
 
 /////////////////////////////////////
+
+// Уяви, що ти проходиш курс із React. У тебе є дедлайн для здачі фінального проєкту. Якщо ти здаєш його за 3 дні до дедлайну або раніше, ти отримуєш бонусні бали за швидкість.
+
+
+
+
+function reactProject(project){
+  const today = new Date();
+  const lastDayProject = new Date(project);
+
+  const diff = lastDayProject - today
+
+  const daysLeft = Math.ceil(diff / (1000 * 60 * 60 * 24));
+
+  if(daysLeft >= 3){
+    return "ти отримаєш боносні бали"
+  }else{
+    return "ти не отримаєш боносні бали"
+  }
+}
+console.log(reactProject("2026-02-01"));
+
+
+/////////////////////////////////////////
