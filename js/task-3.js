@@ -155,3 +155,19 @@ function terminalYear (peapleYear, abonoment){
 console.log(terminalYear(23, true));
 
 
+
+/////////////////////////////////////////////
+
+
+function canIWithdrawMoney(unlockDateString){
+const today = new Date();
+const unlockDate = new Date(unlockDateString)
+
+if(today >= unlockDate){
+  return "гроші розблоковано"
+}else{
+  return "ще рано"
+}
+}
+
+console.log(canIWithdrawMoney("2026-2-01"));
