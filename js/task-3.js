@@ -252,13 +252,30 @@ console.log(reactProject("2026-02-01"));
 
 
 
-// Уяви, що ти робиш сайт на замовлення. Клієнт платить тобі за кожну годину роботи, але ставка залежить від того, наскільки швидко ти закриваєш завдання.
+// Уяви, що піцерія обіцяє доставку за 45 хвилин. Тобі приходить час замовлення (orderTime) і час прибуття кур'єра (arrivalTime). Якщо різниця більше 45 хв — піца безкоштовна.
 
 
 
+function isPizzaFree(orderTimeString, arrivalTimeString){
+  const order = new Date(orderTimeString)
+  const arrive = new Date(arrivalTimeString)
 
-function calculateAge(hours, deadlineDays){
+  const diffInMs = arrive - order;
+  const minutes = diffInMs / (1000 * 60)
 
+  if(minutes > 45){
+    return "безкоштовно"
+  }else{
+    return "оплатіть замовлення"
+  }
 }
 
-console.log(calculateAge());
+console.log(isPizzaFree("2026-03-24T15:00:00", "2026-03-24T15:50:00"));
+
+
+
+
+
+
+
+
