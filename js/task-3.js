@@ -326,3 +326,22 @@ console.log(daysSavings("2026-01-01"));
 
 
 /////////////////////////////////////////////////////
+
+
+
+
+// Уяви, що ти робиш сайт, де доступ до контенту (наприклад, твоїх уроків з IT) платний. Тобі треба написати функцію, яка перевіряє, чи не закінчився термін доступу у користувача.
+
+function checkPremium(expireDate) {
+  const today = new Date();
+  const expire = new Date(expireDate);
+
+
+  if (expire > today) {
+    return "Підписка діє";
+  } else {
+    return "Підписка закінчилась";
+  }
+}
+
+console.log(checkPremium('2026-05-01'));
