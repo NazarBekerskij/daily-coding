@@ -345,3 +345,20 @@ function checkPremium(expireDate) {
 }
 
 console.log(checkPremium('2026-05-01'));
+
+
+// Уяви, що на твоєму сайті діє акція: якщо людина купує щось вночі (з 22:00 до 06:00 ранку), вона отримує знижку 20%. В інший час ціна звичайна.
+
+function calculatorPrice(basePrice){
+  const now = new Date()
+  const hours = now.getHours()
+
+ if (hours >= 22 || hours < 6) {
+    const discountPrice = basePrice * 0.8; // -20%
+    return `Нічна знижка! Ціна: ${discountPrice} грн (замість ${basePrice})`;
+  } else {
+    return `Денна ціна: ${basePrice} грн`;
+  }
+}
+
+console.log(calculatorPrice(1000));
