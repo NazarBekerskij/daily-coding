@@ -8,3 +8,17 @@ li{
 .active{
     color: red;
 }
+
+.deposit {
+    margin: 50px;
+}
+
+.deposit-box{
+    background-color: aqua;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    margin: 50px;
+    height: 150px;
+}

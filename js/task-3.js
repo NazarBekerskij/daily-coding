@@ -302,3 +302,27 @@ checkTimeToEndOfDay();
 
 
 
+///////////////////////////////////////////////////
+
+
+// Уяви, що ти відкрив депозит на машину. Тобі треба написати функцію, яка рахує, скільки повних днів минуло з моменту відкриття рахунку до сьогодні.
+
+
+const deposit = document.querySelector(".deposit")
+
+
+function daysSavings(startDate){
+const today = new Date()
+const start = new Date(startDate)
+
+const diff = today - start
+
+const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+return deposit.textContent = days
+}
+console.log(daysSavings("2026-01-01"));
+
+
+
+/////////////////////////////////////////////////////
