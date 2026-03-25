@@ -274,7 +274,30 @@ console.log(isPizzaFree("2026-03-24T15:00:00", "2026-03-24T15:50:00"));
 
 
 
+//////////////////////////////////////////////
 
+// Тобі потрібно написати скрипт, який порахує, скільки годин, хвилин та секунд залишилося рівно до півночі сьогоднішнього дня ($00:00:00$ наступної доби).
+
+
+
+
+function checkTimeToEndOfDay() {
+  const now = new Date(); 
+  
+  const tomorrow = new Date();
+  tomorrow.setHours(24, 0, 0, 0); 
+
+  const diff = tomorrow - now;
+
+  // Твої нові формули:
+  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+  console.log(`До кінця дня: ${hours}г ${minutes}хв ${seconds}с`);
+}
+
+checkTimeToEndOfDay(); 
 
 
 
