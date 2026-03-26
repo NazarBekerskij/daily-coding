@@ -362,3 +362,19 @@ function calculatorPrice(basePrice){
 }
 
 console.log(calculatorPrice(1000));
+
+
+
+function calculatorPrice(basePrice){
+  const now = new Date()
+  const hours = now.getHours()
+
+ if (hours >= 22 || hours < 6) {
+    const discountPrice = basePrice * 0.8; // -20%
+    return `Нічна знижка! Ціна: ${discountPrice} грн (замість ${basePrice})`;
+  } else {
+    return `Денна ціна: ${basePrice} грн`;
+  }
+}
+
+console.log(calculatorPrice(5000));
