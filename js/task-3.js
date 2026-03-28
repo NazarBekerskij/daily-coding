@@ -476,64 +476,105 @@
 
 
 
+// const day = document.querySelector('[data-value="days"]');
+// const hours = document.querySelector('[data-value="hours"]');
+// const minute = document.querySelector('[data-value="mins"]');
+// const second = document.querySelector('[data-value="secs"]');
+
+
+// const happeDay = new Date(2026, 2,28,10,58,0);
+
+
+// const id = setInterval(() => {
+// const currneDay = new Date();
+// const time = happeDay - currneDay
+
+
+// if(time < 0){
+//   clearInterval(id)
+//   alert("з днем народження")
+//   document.body.style.backgroundColor = "gold"
+//   return;
+// }
+
+// const daysLeft = Math.floor(time / (1000 * 60 * 60 * 24));
+// const hours1 = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+// const mins = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
+// const secs = Math.floor((time % (1000 * 60)) / 1000);
+
+
+// day.textContent = daysLeft;
+// hours.textContent = hours1
+// minute.textContent = mins
+// second.textContent = secs
+
+// }, 1000)
+
+
+////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const day = document.querySelector('[data-value="days"]');
 const hours = document.querySelector('[data-value="hours"]');
 const minute = document.querySelector('[data-value="mins"]');
 const second = document.querySelector('[data-value="secs"]');
 
+// Дата матчу: 28 березня 2026 року, 11:08
+const happyMatch = new Date(2026, 2, 28, 11, 8, 0);
 
-const happeDay = new Date(2026, 2,28,10,58,0);
-
-
-const id = setInterval(() => {
-const currneDay = new Date();
-const time = happeDay - currneDay
-
-
-if(time < 0){
-  clearInterval(id)
-  alert("з днем народження")
-  document.body.style.backgroundColor = "gold"
-  return;
+// Функція для додавання нуля попереду (наприклад, 05 замість 5)
+function pad(value) {
+  return String(value).padStart(2, '0');
 }
 
-const daysLeft = Math.floor(time / (1000 * 60 * 60 * 24));
-const hours1 = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-const mins = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
-const secs = Math.floor((time % (1000 * 60)) / 1000);
+const id = setInterval(() => {
+  const currentDay = new Date();
+  const time = happyMatch - currentDay;
 
+  // Перевірка завершення відліку
+  if (time <= 0) {
+    clearInterval(id);
+    
+    // Скидаємо все в нулі на екрані
+    day.textContent = '00';
+    hours.textContent = '00';
+    minute.textContent = '00';
+    second.textContent = '00';
 
-day.textContent = daysLeft;
-hours.textContent = hours1
-minute.textContent = mins
-second.textContent = secs
+    alert("Hala Madrid! Матч розпочато!");
+    
+    // Виправлений фон з url()
+    document.body.style.backgroundImage = "url('https://media.gettyimages.com/id/962792890/photo/kiev-ukraine-cristiano-ronaldo-of-real-madrid-lifts-the-uefa-champions-league-trophy-following.jpg?s=612x612&w=gi&k=20&c=jOaciAsu-ymOT9KFGDTtivq1fNMHLhJz5tzea8kwkX0=')";
+    document.body.style.backgroundSize = "cover"; // Щоб картинка була на весь екран
+    
+    return;
+  }
 
-}, 1000)
+  // Розрахунок часу
+  const daysLeft = Math.floor(time / (1000 * 60 * 60 * 24));
+  const hours1 = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const mins = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
+  const secs = Math.floor((time % (1000 * 60)) / 1000);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  // Вивід на екран з форматуванням
+  day.textContent = pad(daysLeft);
+  hours.textContent = pad(hours1);
+  minute.textContent = pad(mins);
+  second.textContent = pad(secs);
+}, 1000);
 
 
 
