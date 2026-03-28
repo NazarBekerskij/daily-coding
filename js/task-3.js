@@ -430,15 +430,21 @@ let id = null
 start.addEventListener("click", () => {
  if (id) return;
   timerRef.textContent = value
-  value += 1
+  value ++
  id = setInterval(() => {
   timerRef.textContent = value
-  value += 1
+  value ++
   }, 1000)
 })
 
-
 stop.addEventListener("click", () => {
+  clearInterval(id)
+  id = null;
+})
+
+clear.addEventListener("click", () => {
+  value = 0;
+  timerRef.textContent = 0
   clearInterval(id)
   id = null;
 })
