@@ -82,24 +82,24 @@
 
 
 
-function daysUntilNextBirthday(birthMonth, birthDay) {
-  const today = new Date();
-  const currentYear = today.getFullYear();
+// function daysUntilNextBirthday(birthMonth, birthDay) {
+//   const today = new Date();
+//   const currentYear = today.getFullYear();
 
-  let nextBirthday = new Date(currentYear, birthMonth, birthDay);
+//   let nextBirthday = new Date(currentYear, birthMonth, birthDay);
 
-  if (today > nextBirthday) {
-    nextBirthday.setFullYear(currentYear + 1);
-  }
+//   if (today > nextBirthday) {
+//     nextBirthday.setFullYear(currentYear + 1);
+//   }
 
-  const diff = nextBirthday - today;
+//   const diff = nextBirthday - today;
 
-  const daysLeft = Math.ceil(diff / (1000 * 60 * 60 * 24));
+//   const daysLeft = Math.ceil(diff / (1000 * 60 * 60 * 24));
 
-  return daysLeft;
-}
+//   return daysLeft;
+// }
 
-console.log(daysUntilNextBirthday(9, 30));
+// console.log(daysUntilNextBirthday(9, 30));
 
 
 
@@ -108,22 +108,22 @@ console.log(daysUntilNextBirthday(9, 30));
 
 
 
-function weeksUniteMove(targetDate){
-  const today = new Date();
-  const target = new Date(targetDate);
+// function weeksUniteMove(targetDate){
+//   const today = new Date();
+//   const target = new Date(targetDate);
 
-  const time = target - today
+//   const time = target - today
 
 
-  const msInWeek = 1000 * 60 * 60 * 24 * 7
+//   const msInWeek = 1000 * 60 * 60 * 24 * 7
   
-  const weeks = Math.floor(time / msInWeek)   
+//   const weeks = Math.floor(time / msInWeek)   
 
 
-  return weeks
-}
+//   return weeks
+// }
 
-console.log("до переїзду залишилося:", weeksUniteMove("2027-09-01"));
+// console.log("до переїзду залишилося:", weeksUniteMove("2027-09-01"));
 
 
 //////////////////////////////////////////////////
@@ -131,46 +131,46 @@ console.log("до переїзду залишилося:", weeksUniteMove("2027-
 
 // Напиши функцію, яка приймає кількість годин на день і каже, скільки це буде хвилин за тиждень (7 днів).
 
-function weekCodujngMinutes (hoursDay) {
-const hoursPerWeek = hoursDay * 7;
+// function weekCodujngMinutes (hoursDay) {
+// const hoursPerWeek = hoursDay * 7;
 
-const minutesWeek = hoursPerWeek * 60
+// const minutesWeek = hoursPerWeek * 60
 
-return minutesWeek
-}
-console.log(weekCodujngMinutes(2));
-
-
-/////////////////////////////////////////////
-
-
-function terminalYear (peapleYear, abonoment){
-  if(peapleYear >= 18 && abonoment === true){
-    return "проходь далі";
-  }else{
-    return "тобі сюда не можна";
-  }
-}
-
-console.log(terminalYear(23, true));
-
+// return minutesWeek
+// }
+// console.log(weekCodujngMinutes(2));
 
 
 /////////////////////////////////////////////
 
 
-function canIWithdrawMoney(unlockDateString){
-const today = new Date();
-const unlockDate = new Date(unlockDateString)
+// function terminalYear (peapleYear, abonoment){
+//   if(peapleYear >= 18 && abonoment === true){
+//     return "проходь далі";
+//   }else{
+//     return "тобі сюда не можна";
+//   }
+// }
 
-if(today >= unlockDate){
-  return "гроші розблоковано"
-}else{
-  return "ще рано"
-}
-}
+// console.log(terminalYear(23, true));
 
-console.log(canIWithdrawMoney("2026-2-01"));
+
+
+/////////////////////////////////////////////
+
+
+// function canIWithdrawMoney(unlockDateString){
+// const today = new Date();
+// const unlockDate = new Date(unlockDateString)
+
+// if(today >= unlockDate){
+//   return "гроші розблоковано"
+// }else{
+//   return "ще рано"
+// }
+// }
+
+// console.log(canIWithdrawMoney("2026-2-01"));
 
 
 ////////////////////////////////////////////
@@ -178,23 +178,23 @@ console.log(canIWithdrawMoney("2026-2-01"));
 
 // Уяви, що ти розробляєш сайт для оренди квартир у місті, куди ти збираєшся переїхати. Власник квартири дає знижку, якщо людина бронює житло мінімум за 30 днів до заїзду.
 
-function arendHome(checkInDateString){
-const today = new Date()
-const action = new Date(checkInDateString)
+// function arendHome(checkInDateString){
+// const today = new Date()
+// const action = new Date(checkInDateString)
 
-const diffInMs = action - today;
+// const diffInMs = action - today;
 
-const daysLeft = Math.ceil(diffInMs / (1000 * 60 * 60 * 24));
+// const daysLeft = Math.ceil(diffInMs / (1000 * 60 * 60 * 24));
 
-if(daysLeft >= 30){
-  return `до заїзду ${daysLeft} днів залишилося ви отримали знижку`
-}else{
-  return `до заїзду ${daysLeft} днів залишилося ви не отримали знижку`
-}
-}
+// if(daysLeft >= 30){
+//   return `до заїзду ${daysLeft} днів залишилося ви отримали знижку`
+// }else{
+//   return `до заїзду ${daysLeft} днів залишилося ви не отримали знижку`
+// }
+// }
 
 
-console.log(arendHome("2026-05-01"));
+// console.log(arendHome("2026-05-01"));
 
 
 ////////////////////////////////////////////
@@ -203,25 +203,25 @@ console.log(arendHome("2026-05-01"));
 // Уяви, що ти приходиш у свій зал, прикладаєш картку, і система має перевірити, чи не закінчився твій абонемент сьогодні.
 
 
-function gumAbonoment(abonoment){
-const today = new Date();
-const lastDayAbonoment = new Date(abonoment)
+// function gumAbonoment(abonoment){
+// const today = new Date();
+// const lastDayAbonoment = new Date(abonoment)
 
-const diff = lastDayAbonoment - today
+// const diff = lastDayAbonoment - today
 
-const daysLeft = Math.ceil(diff / (1000 * 60 * 60 * 24));
+// const daysLeft = Math.ceil(diff / (1000 * 60 * 60 * 24));
 
 
 
-if(daysLeft >= 0){
-  return `Абонемент доступний! Залишилося ${daysLeft} днів.`;
-}else{
-  return `Абонемент не доступний. Термін закінчився ${Math.abs(daysLeft)} днів тому.`;
-}
-}
+// if(daysLeft >= 0){
+//   return `Абонемент доступний! Залишилося ${daysLeft} днів.`;
+// }else{
+//   return `Абонемент не доступний. Термін закінчився ${Math.abs(daysLeft)} днів тому.`;
+// }
+// }
 
-console.log(gumAbonoment("2026-12-31")); 
-console.log(gumAbonoment("2024-01-01")); 
+// console.log(gumAbonoment("2026-12-31")); 
+// console.log(gumAbonoment("2024-01-01")); 
 
 
 /////////////////////////////////////
@@ -231,21 +231,21 @@ console.log(gumAbonoment("2024-01-01"));
 
 
 
-function reactProject(project){
-  const today = new Date();
-  const lastDayProject = new Date(project);
+// function reactProject(project){
+//   const today = new Date();
+//   const lastDayProject = new Date(project);
 
-  const diff = lastDayProject - today
+//   const diff = lastDayProject - today
 
-  const daysLeft = Math.ceil(diff / (1000 * 60 * 60 * 24));
+//   const daysLeft = Math.ceil(diff / (1000 * 60 * 60 * 24));
 
-  if(daysLeft >= 3){
-    return "ти отримаєш боносні бали"
-  }else{
-    return "ти не отримаєш боносні бали"
-  }
-}
-console.log(reactProject("2026-02-01"));
+//   if(daysLeft >= 3){
+//     return "ти отримаєш боносні бали"
+//   }else{
+//     return "ти не отримаєш боносні бали"
+//   }
+// }
+// console.log(reactProject("2026-02-01"));
 
 
 /////////////////////////////////////////
@@ -256,21 +256,21 @@ console.log(reactProject("2026-02-01"));
 
 
 
-function isPizzaFree(orderTimeString, arrivalTimeString){
-  const order = new Date(orderTimeString)
-  const arrive = new Date(arrivalTimeString)
+// function isPizzaFree(orderTimeString, arrivalTimeString){
+//   const order = new Date(orderTimeString)
+//   const arrive = new Date(arrivalTimeString)
 
-  const diffInMs = arrive - order;
-  const minutes = diffInMs / (1000 * 60)
+//   const diffInMs = arrive - order;
+//   const minutes = diffInMs / (1000 * 60)
 
-  if(minutes > 45){
-    return "безкоштовно"
-  }else{
-    return "оплатіть замовлення"
-  }
-}
+//   if(minutes > 45){
+//     return "безкоштовно"
+//   }else{
+//     return "оплатіть замовлення"
+//   }
+// }
 
-console.log(isPizzaFree("2026-03-24T15:00:00", "2026-03-24T15:50:00"));
+// console.log(isPizzaFree("2026-03-24T15:00:00", "2026-03-24T15:50:00"));
 
 
 
@@ -281,23 +281,23 @@ console.log(isPizzaFree("2026-03-24T15:00:00", "2026-03-24T15:50:00"));
 
 
 
-function checkTimeToEndOfDay() {
-  const now = new Date(); 
+// function checkTimeToEndOfDay() {
+//   const now = new Date(); 
   
-  const tomorrow = new Date();
-  tomorrow.setHours(24, 0, 0, 0); 
+//   const tomorrow = new Date();
+//   tomorrow.setHours(24, 0, 0, 0); 
 
-  const diff = tomorrow - now;
+//   const diff = tomorrow - now;
 
-  // Твої нові формули:
-  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+//   // Твої нові формули:
+//   const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+//   const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+//   const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-  console.log(`До кінця дня: ${hours}г ${minutes}хв ${seconds}с`);
-}
+//   console.log(`До кінця дня: ${hours}г ${minutes}хв ${seconds}с`);
+// }
 
-checkTimeToEndOfDay(); 
+// checkTimeToEndOfDay(); 
 
 
 
@@ -308,20 +308,20 @@ checkTimeToEndOfDay();
 // Уяви, що ти відкрив депозит на машину. Тобі треба написати функцію, яка рахує, скільки повних днів минуло з моменту відкриття рахунку до сьогодні.
 
 
-const deposit = document.querySelector(".deposit")
+// const deposit = document.querySelector(".deposit")
 
 
-function daysSavings(startDate){
-const today = new Date()
-const start = new Date(startDate)
+// function daysSavings(startDate){
+// const today = new Date()
+// const start = new Date(startDate)
 
-const diff = today - start
+// const diff = today - start
 
-const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+// const days = Math.floor(diff / (1000 * 60 * 60 * 24));
 
-return deposit.textContent = days
-}
-console.log(daysSavings("2026-01-01"));
+// return deposit.textContent = days
+// }
+// console.log(daysSavings("2026-01-01"));
 
 
 
@@ -332,64 +332,85 @@ console.log(daysSavings("2026-01-01"));
 
 // Уяви, що ти робиш сайт, де доступ до контенту (наприклад, твоїх уроків з IT) платний. Тобі треба написати функцію, яка перевіряє, чи не закінчився термін доступу у користувача.
 
-function checkPremium(expireDate) {
-  const today = new Date();
-  const expire = new Date(expireDate);
+// function checkPremium(expireDate) {
+//   const today = new Date();
+//   const expire = new Date(expireDate);
 
 
-  if (expire > today) {
-    return "Підписка діє";
-  } else {
-    return "Підписка закінчилась";
-  }
-}
+//   if (expire > today) {
+//     return "Підписка діє";
+//   } else {
+//     return "Підписка закінчилась";
+//   }
+// }
 
-console.log(checkPremium('2026-05-01'));
+// console.log(checkPremium('2026-05-01'));
 
 
 // Уяви, що на твоєму сайті діє акція: якщо людина купує щось вночі (з 22:00 до 06:00 ранку), вона отримує знижку 20%. В інший час ціна звичайна.
 
-function calculatorPrice(basePrice){
-  const now = new Date()
-  const hours = now.getHours()
+// function calculatorPrice(basePrice){
+//   const now = new Date()
+//   const hours = now.getHours()
 
- if (hours >= 22 || hours < 6) {
-    const discountPrice = basePrice * 0.8; // -20%
-    return `Нічна знижка! Ціна: ${discountPrice} грн (замість ${basePrice})`;
-  } else {
-    return `Денна ціна: ${basePrice} грн`;
-  }
+//  if (hours >= 22 || hours < 6) {
+//     const discountPrice = basePrice * 0.8; // -20%
+//     return `Нічна знижка! Ціна: ${discountPrice} грн (замість ${basePrice})`;
+//   } else {
+//     return `Денна ціна: ${basePrice} грн`;
+//   }
+// }
+
+// console.log(calculatorPrice(1000));
+
+
+
+// function calculatorPrice(basePrice){
+//   const now = new Date()
+//   const hours = now.getHours()
+
+//  if (hours >= 22 || hours < 6) {
+//     const discountPrice = basePrice * 0.8; // -20%
+//     return `Нічна знижка! Ціна: ${discountPrice} грн (замість ${basePrice})`;
+//   } else {
+//     return `Денна ціна: ${basePrice} грн`;
+//   }
+// }
+
+// console.log(calculatorPrice(5000));
+
+
+// function calculatorPrice(basePrice){
+//   const now = new Date()
+//   const hours = now.getHours()
+
+//  if (hours >= 22 || hours < 6) {
+//     const discountPrice = basePrice * 0.8; // -20%
+//     return `Нічна знижка! Ціна: ${discountPrice} грн (замість ${basePrice})`;
+//   } else {
+//     return `Денна ціна: ${basePrice} грн`;
+//   }
+// }
+
+// console.log(calculatorPrice(6000));
+
+
+const first = document.querySelector('.firs-input')
+const second = document.querySelector('.second-input')
+const save = document.querySelector('.save')
+
+let contacts = JSON.parse(localStorage.getItem("contacts")) || [];
+
+save.addEventListener("click", () => {
+const newContacts = {
+  firstName: first.value,
+  lastName: second.value,
 }
+contacts.push(newContacts)
 
-console.log(calculatorPrice(1000));
+localStorage.setItem("contacts", JSON.stringify(contacts))
 
+first.value = ""
+second.value = ""
+})
 
-
-function calculatorPrice(basePrice){
-  const now = new Date()
-  const hours = now.getHours()
-
- if (hours >= 22 || hours < 6) {
-    const discountPrice = basePrice * 0.8; // -20%
-    return `Нічна знижка! Ціна: ${discountPrice} грн (замість ${basePrice})`;
-  } else {
-    return `Денна ціна: ${basePrice} грн`;
-  }
-}
-
-console.log(calculatorPrice(5000));
-
-
-function calculatorPrice(basePrice){
-  const now = new Date()
-  const hours = now.getHours()
-
- if (hours >= 22 || hours < 6) {
-    const discountPrice = basePrice * 0.8; // -20%
-    return `Нічна знижка! Ціна: ${discountPrice} грн (замість ${basePrice})`;
-  } else {
-    return `Денна ціна: ${basePrice} грн`;
-  }
-}
-
-console.log(calculatorPrice(6000));
