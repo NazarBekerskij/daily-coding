@@ -448,3 +448,27 @@ clear.addEventListener("click", () => {
   clearInterval(id)
   id = null;
 })
+
+
+
+
+/////////////////////////////////
+
+// Напиши функцію getCurrentDate, яка не приймає аргументів, а просто повертає рядок з поточною датою у зручному форматі: "Сьогодні: День.Місяць.Рік".
+
+function getCurrentDate(){
+  const now = new Date()  
+
+  const day = now.getDay()
+  const month = now.getMonth() + 1;
+  const year = now.getFullYear()
+
+  return `сьогодні ${day}.${month}.${year}`
+
+}
+console.log(getCurrentDate());
+
+
+
+
+
