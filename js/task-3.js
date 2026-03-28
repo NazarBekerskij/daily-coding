@@ -414,3 +414,31 @@ first.value = ""
 second.value = ""
 })
 
+//////////////////////////////////////////
+
+
+const timerRef = document.querySelector('.timer')
+const start = document.querySelector('.start')
+const stop = document.querySelector('.stop')
+const clear = document.querySelector(".clear")
+
+
+let value = 0;
+let id = null
+
+
+start.addEventListener("click", () => {
+ if (id) return;
+  timerRef.textContent = value
+  value += 1
+ id = setInterval(() => {
+  timerRef.textContent = value
+  value += 1
+  }, 1000)
+})
+
+
+stop.addEventListener("click", () => {
+  clearInterval(id)
+  id = null;
+})
