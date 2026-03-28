@@ -19,7 +19,15 @@ if(random){
 
     
 })
+
 console.log(promise);
+
+promise
+.then((res) => {console.log(res)}) //успішне
+.catch((error) => {console.log(error)}) //помилка
+.finally(() => {console.log("виконуєця завжди не залежно від результату");
+}) 
+
 
 
 
