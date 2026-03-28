@@ -395,59 +395,59 @@
 // console.log(calculatorPrice(6000));
 
 
-const first = document.querySelector('.firs-input')
-const second = document.querySelector('.second-input')
-const save = document.querySelector('.save')
+// const first = document.querySelector('.firs-input')
+// const second = document.querySelector('.second-input')
+// const save = document.querySelector('.save')
 
-let contacts = JSON.parse(localStorage.getItem("contacts")) || [];
+// let contacts = JSON.parse(localStorage.getItem("contacts")) || [];
 
-save.addEventListener("click", () => {
-const newContacts = {
-  firstName: first.value,
-  lastName: second.value,
-}
-contacts.push(newContacts)
+// save.addEventListener("click", () => {
+// const newContacts = {
+//   firstName: first.value,
+//   lastName: second.value,
+// }
+// contacts.push(newContacts)
 
-localStorage.setItem("contacts", JSON.stringify(contacts))
+// localStorage.setItem("contacts", JSON.stringify(contacts))
 
-first.value = ""
-second.value = ""
-})
+// first.value = ""
+// second.value = ""
+// })
 
 //////////////////////////////////////////
 
 
-const timerRef = document.querySelector('.timer')
-const start = document.querySelector('.start')
-const stop = document.querySelector('.stop')
-const clear = document.querySelector(".clear")
+// const timerRef = document.querySelector('.timer')
+// const start = document.querySelector('.start')
+// const stop = document.querySelector('.stop')
+// const clear = document.querySelector(".clear")
 
 
-let value = 0;
-let id = null
+// let value = 0;
+// let id = null
 
 
-start.addEventListener("click", () => {
- if (id) return;
-  timerRef.textContent = value
-  value ++
- id = setInterval(() => {
-  timerRef.textContent = value
-  value ++
-  }, 1000)
-})
+// start.addEventListener("click", () => {
+//  if (id) return;
+//   timerRef.textContent = value
+//   value ++
+//  id = setInterval(() => {
+//   timerRef.textContent = value
+//   value ++
+//   }, 1000)
+// })
 
-stop.addEventListener("click", () => {
-  clearInterval(id)
-  id = null;
-})
+// stop.addEventListener("click", () => {
+//   clearInterval(id)
+//   id = null;
+// })
 
-clear.addEventListener("click", () => {
-  value = 0;
-  timerRef.textContent = 0
-  clearInterval(id)
-  id = null;
-})
+// clear.addEventListener("click", () => {
+//   value = 0;
+//   timerRef.textContent = 0
+//   clearInterval(id)
+//   id = null;
+// })
 
 
 
@@ -456,17 +456,125 @@ clear.addEventListener("click", () => {
 
 // Напиши функцію getCurrentDate, яка не приймає аргументів, а просто повертає рядок з поточною датою у зручному форматі: "Сьогодні: День.Місяць.Рік".
 
-function getCurrentDate(){
-  const now = new Date()  
+// function getCurrentDate(){
+//   const now = new Date()  
 
-  const day = now.getDay()
-  const month = now.getMonth() + 1;
-  const year = now.getFullYear()
+//   const day = now.getDay()
+//   const month = now.getMonth() + 1;
+//   const year = now.getFullYear()
 
-  return `сьогодні ${day}.${month}.${year}`
+//   return `сьогодні ${day}.${month}.${year}`
 
+// }
+// console.log(getCurrentDate());
+
+
+
+/////////////////////////////////////
+
+
+
+
+
+const day = document.querySelector('[data-value="days"]');
+const hours = document.querySelector('[data-value="hours"]');
+const minute = document.querySelector('[data-value="mins"]');
+const second = document.querySelector('[data-value="secs"]');
+
+
+const happeDay = new Date(2026, 2,28,10,58,0);
+
+
+const id = setInterval(() => {
+const currneDay = new Date();
+const time = happeDay - currneDay
+
+
+if(time < 0){
+  clearInterval(id)
+  alert("з днем народження")
+  document.body.style.backgroundColor = "gold"
+  return;
 }
-console.log(getCurrentDate());
+
+const daysLeft = Math.floor(time / (1000 * 60 * 60 * 24));
+const hours1 = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+const mins = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
+const secs = Math.floor((time % (1000 * 60)) / 1000);
+
+
+day.textContent = daysLeft;
+hours.textContent = hours1
+minute.textContent = mins
+second.textContent = secs
+
+}, 1000)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
