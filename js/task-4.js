@@ -4,41 +4,64 @@
 
 
 //                         успішне  | не успішне
-const promise = new Promise((resolve, reject) => {   
+// const promise = new Promise((resolve, reject) => {   
 
-setTimeout(() => {
-const random = Math.random() > 0.5 // true | false
+// setTimeout(() => {
+// const random = Math.random() > 0.5 // true | false
 
-if(random){
-    resolve("Yesssssssss")
-}else{
-    reject("Nooooooooo")
-}
+// if(random){
+//     resolve("Yesssssssss")
+// }else{
+//     reject("Nooooooooo")
+// }
     
-},1000) 
+// },1000) 
 
     
-})
+// })
 
-console.log(promise);
+// console.log(promise);
 
-promise
-.then((res) => {console.log(res)}) //успішне
-.catch((error) => {console.log(error)}) //помилка
-.finally(() => {console.log("виконуєця завжди не залежно від результату");
-}) 
-
-
+// promise
+// .then((res) => {console.log(res)}) //успішне
+// .catch((error) => {console.log(error)}) //помилка
+// .finally(() => {console.log("виконуєця завжди не залежно від результату");
+// }) 
 
 
 
 
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// const makeOrder = (dish, onSucses, onError) => {
+//     const random = Math.random() > 0.5 // true | false
+//     setTimeout(() => {
+//         if(random){
+//             onSucses(`Ось ваше блюдо ${dish}`)
+//         }else{
+//             onError("Ви залишетись голодні, продукити закінчилися")
+//         }
+//     }, 1000)
+    
+// }
 
 
 
+// makeOrder("періжок", onMakeOrderSucses, onMakeOrderError)
 
 
+// function onMakeOrderSucses(result) {
+//     console.log("виклик функції onMakeOrderSucses:" ,result);
+    
+// }
+
+
+// function onMakeOrderError(error) {
+//     console.log("виклик функції onMakeOrderError:" ,error);
+    
+// }
 
 
 
