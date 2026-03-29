@@ -50,37 +50,82 @@ function onMakeOrderError(error) {
 
 
 
-const delay = ms => {
-  const promise = new Promise((resolve) => {
+// const delay = ms => {
+//   const promise = new Promise((resolve) => {
     
-    setTimeout(() => {
-      resolve(ms);
-    }, ms);
+//     setTimeout(() => {
+//       resolve(ms);
+//     }, ms);
     
-  });
+//   });
 
-  return promise;
-};
+//   return promise;
+// };
 
-const logger = time => console.log(`Resolved after ${time}ms`);
+// const logger = time => console.log(`Resolved after ${time}ms`);
 
-delay(2000).then(logger); 
-delay(1000).then(logger); 
-delay(3000).then(logger);
-delay(1500).then(logger);
-
-
+// delay(2000).then(logger); 
+// delay(1000).then(logger); 
+// delay(3000).then(logger);
+// delay(1500).then(logger);
 
 
 
 
 
 
+////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Перепиши функцію toggleUserState() так, щоб вона не використовувала callback-функцію callback, а приймала всього два параметри allUsers і userName і повертала проміс.
 
 
 
+const users = [
+  { name: 'Mango', active: true },
+  { name: 'Poly', active: false },
+  { name: 'Ajax', active: true },
+  { name: 'Lux', active: false },
+];
+
+// const toggleUserState = (allUsers, userName, callback) => {
+//   const updatedUsers = allUsers.map(user =>
+//     user.name === userName ? { ...user, active: !user.active } : user,
+//   );
+
+//   callback(updatedUsers);
+// };
+
+// const logger = updatedUsers => console.table(updatedUsers);
+
+// /*
+//  * Зараз працює так
+//  */
+// toggleUserState(users, 'Mango', logger);
+// toggleUserState(users, 'Lux', logger);
+
+// /*
+//  * Повинно працювати так
+//  */
+// toggleUserState(users, 'Mango').then(logger);
+// toggleUserState(users, 'Lux').then(logger);
 
 
+const toggleUserState = (allUsers, userName) => {
+    return new Promise((resolve) => {
+          const updatedUsers = allUsers.map(user =>
+    user.name === userName ? { ...user, active: !user.active } : user,
+  );
+
+  resolve(updatedUsers)
+    })
+}
+
+const logger = updatedUsers => console.table(updatedUsers);
+
+
+toggleUserState(users, 'Mango').then(logger);
+toggleUserState(users, 'Lux').then(logger);
 
 
 
