@@ -107,23 +107,58 @@
 
 
 
+// const andrij = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         reject("Андрій прибіг першим")
+//     }, 2000)
+// })
+
+
+// const ostap = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         reject("Остап прибіг першим")
+//     }, 5000)
+// })
+
+
+// const katerina = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         reject("Катерина прибіг першим")
+//     }, 1500)
+// })
+
+
+
+// Promise.race([andrij, ostap, katerina])
+// .then((winner) => {
+// console.log("переможець" , winner);
+// })
+// .catch((error) => {
+// console.log("error" ,error);
+// console.log();
+// })
+
+
+
+
+
 const andrij = new Promise((resolve, reject) => {
     setTimeout(() => {
-        resolve("Андрій прибіг першим")
+        reject("Андрій прибіг першим")
     }, 2000)
 })
 
 
 const ostap = new Promise((resolve, reject) => {
     setTimeout(() => {
-        resolve("Остап прибіг першим")
+        reject("Остап прибіг першим")
     }, 5000)
 })
 
 
 const katerina = new Promise((resolve, reject) => {
     setTimeout(() => {
-        resolve("Катерина прибіг першим")
+        reject("Катерина прибіг першим")
     }, 1500)
 })
 
@@ -134,15 +169,9 @@ Promise.race([andrij, ostap, katerina])
 console.log("переможець" , winner);
 })
 .catch((error) => {
-console.log(error);
+console.log("error" ,error);
 console.log();
 })
-
-
-
-
-
-
 
 
 
