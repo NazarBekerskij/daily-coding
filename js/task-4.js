@@ -69,11 +69,74 @@
 
 
 
+//////////////////////////////////////////////////////////////////////////////////////
+
+//                         успішон  | не успішно(помилка)
+// const andrij = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         resolve("Aндрій створив розмітку header")
+//     }, 2000)
+// })
+
+
+// const ostap = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         resolve("Остап нестилізував розмітку")
+//     }, 5000)
+// })
+
+
+// const katerina = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         resolve("Катерина запушила код на git hub")
+//     }, 1500)
+// })
+
+
+
+// Promise.all([andrij, ostap, katerina])
+// .then((result) => {
+// console.log("result" ,result);
+// console.log("проект виконано успішно");
+// })
+// .catch((error) => {
+// console.log(error);
+// console.log();
+// })
 
 
 
 
+const andrij = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve("Андрій прибіг першим")
+    }, 2000)
+})
 
+
+const ostap = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve("Остап прибіг першим")
+    }, 5000)
+})
+
+
+const katerina = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve("Катерина прибіг першим")
+    }, 1500)
+})
+
+
+
+Promise.race([andrij, ostap, katerina])
+.then((winner) => {
+console.log("переможець" , winner);
+})
+.catch((error) => {
+console.log(error);
+console.log();
+})
 
 
 
