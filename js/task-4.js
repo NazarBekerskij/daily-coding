@@ -144,21 +144,21 @@
 
 const andrij = new Promise((resolve, reject) => {
     setTimeout(() => {
-        reject("Андрій прибіг першим")
+        resolve("Андрій прибіг першим")
     }, 2000)
 })
 
 
 const ostap = new Promise((resolve, reject) => {
     setTimeout(() => {
-        reject("Остап прибіг першим")
-    }, 5000)
+        resolve("остап Не побігт")
+    }, 3000)
 })
 
 
 const katerina = new Promise((resolve, reject) => {
     setTimeout(() => {
-        reject("Катерина прибіг першим")
+        resolve("Катерина прибіг першим")
     }, 1500)
 })
 
