@@ -164,7 +164,7 @@ const katerina = new Promise((resolve, reject) => {
 
 
 
-Promise.race([andrij, ostap, katerina])
+Promise.any([andrij, ostap, katerina])
 .then((winner) => {
 console.log("переможець" , winner);
 })
