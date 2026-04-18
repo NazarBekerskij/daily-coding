@@ -65,38 +65,37 @@
 
 
 
-ul {
-  list-style: none;
-  margin: 0 auto;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  width: 1000px;
-  outline: 1px solid red; /* Тимчасово для візуалізації */
-  gap: 30px;
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style: none;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .item {
-  /* Ділення на 3 має бути ВСЕРЕДИНІ calc */
-  flex-basis: calc((100% - 60px) / 3); 
+    flex-basis: calc((100% - 40px) / 3);
+    background: #f4f4f4;
+    border-radius: 10px;
+    overflow: hidden; 
 }
 
-img {
-  display: block;
-  width: 100%;
-  height: 200px; /* Додай висоту, щоб сітка була рівною */
-  object-fit: cover; /* Щоб картинки не розтягувалися */
+.item img {
+    width: 100%;
+    height: 250px;
+    display: block;
+    object-fit: cover; 
 }
 
-
-.search-input{
-  border: none;
-  display: block;
-  width: 300px;
-  height: 50px;
-  margin: 0 auto;
-  margin-bottom: 50px;
-  border-radius: 4px;
-  border: none;
-  outline: 2px solid gray;
+.btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 30px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
